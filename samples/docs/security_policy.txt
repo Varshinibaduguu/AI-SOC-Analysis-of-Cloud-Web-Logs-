@@ -1,0 +1,20 @@
+Enterprise Security Policy - AI SOC Copilot Sample Document
+
+1. Authentication Requirements
+All users must enable MFA. Failed login attempts exceeding 5 within 15 minutes trigger account lockout.
+
+2. IAM Security
+- Principle of least privilege must be enforced
+- AssumeRole calls require approval for cross-account access
+- CreateUser and AttachUserPolicy events require security review
+
+3. Incident Response
+- Critical incidents: respond within 1 hour
+- High severity: respond within 4 hours
+- All incidents require post-mortem documentation
+
+4. Log Retention
+CloudTrail, firewall, and Kubernetes audit logs retained for 365 days.
+
+5. Threat Intelligence
+Privilege escalation, failed authentication bursts, and suspicious IAM activity are priority alerts.

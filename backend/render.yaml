@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: ai-soc-analysis-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    disk:
+      name: soc-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: soc-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: LLM_PROVIDER
+        value: openai
+      - key: UPLOAD_DIR
+        value: /app/data/uploads
+      - key: CHROMA_PERSIST_DIR
+        value: /app/data/chroma_data
+
+databases:
+  - name: soc-db
+    plan: free
+    databaseName: soc_analysis
+    user: soc_user
