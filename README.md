@@ -1,5 +1,7 @@
 # AI SOC ANALYSIS SYSTEM
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Enterprise AI-powered Security Operations Center (SOC) assistant for cloud and enterprise security teams. Built for AI/GenAI engineering portfolios with production-style architecture.
 
 ![Architecture](docs/architecture.png)
@@ -336,5 +338,7 @@ Try the included sample files:
 ---
 
 ## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 MIT — Portfolio and educational use.
